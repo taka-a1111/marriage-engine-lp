@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-09-13c -->
+<!-- BUILD_TAG: 2026-09-13d -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>西三河の自動車・製造業で働く30〜40代男性の結婚相談所｜MARRIAGE ENGINE（マリッジエンジン）</title>
@@ -174,6 +174,20 @@ h1,h2,h3,h4{margin:0;line-height:1.55;font-weight:700}
 .verdict{margin-top:28px;border:1px solid var(--navy);background:#fff}
 .verdict .vh{background:var(--navy);color:#fff;padding:18px 20px;font-family:var(--mn);font-weight:700;font-size:1.06rem;line-height:1.7}
 .verdict .vb{padding:20px;font-size:.95rem;color:var(--ink-mid);line-height:2}
+
+/* ===== 改善サイクル図 ===== */
+.rflow{display:flex;flex-direction:column}
+.rf{border:1px solid var(--navy-mid);background:#fff;padding:13px 14px;text-align:center}
+.rf-en{display:block;font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.14em;color:var(--navy)}
+.rf-jp{display:block;font-size:.95rem;font-weight:700;margin-top:5px;color:var(--ink);line-height:1.5}
+.rf.mark{border:2px solid var(--gold)}
+.rf.mark .rf-en{color:var(--gold)}
+.rf-ar{display:flex;align-items:center;justify-content:center;padding:8px 0}
+.rf-ar svg{width:17px;height:17px;stroke:var(--blue);fill:none;transform:rotate(90deg)}
+.rf-loop{margin-top:16px;display:flex;align-items:flex-start;gap:11px;border:1px dashed var(--gold);
+ background:#fff;padding:13px 14px}
+.rf-loop svg{width:18px;height:18px;stroke:var(--gold);fill:none;flex:0 0 auto;margin-top:3px}
+.rf-loop span{font-size:.88rem;font-weight:700;color:var(--navy-mid);line-height:1.75}
 
 /* ===== 比較 ===== */
 .cmp-grid{display:grid;gap:16px}
@@ -555,6 +569,10 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
   .verdict .vh{flex:0 0 40%;display:flex;align-items:center;font-size:1.2rem;padding:28px}
   .verdict .vb{padding:28px 30px}
 
+  .rflow{flex-direction:row;align-items:stretch}
+  .rf{flex:1;display:flex;flex-direction:column;justify-content:center}
+  .rf-ar{padding:0 10px}
+  .rf-ar svg{transform:none}
   .cmp-grid{grid-template-columns:1fr 1fr;gap:20px}
   .cmp-row .k{flex:0 0 132px}
   .cs-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:48px;align-items:start}
@@ -1033,32 +1051,20 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
     </div>
 
     <div class="diagram reveal">
-      <svg viewBox="0 0 680 152" role="img" aria-label="プロフィールから申込み、お見合い、振り返りへと進み、次に直す1点を決めて戻る改善の流れを示した図">
-        <g fill="none" stroke-linecap="round">
-          <rect x="14" y="28" width="122" height="54" stroke="#15456C" stroke-width="1.3"/>
-          <rect x="192" y="28" width="122" height="54" stroke="#15456C" stroke-width="1.3"/>
-          <rect x="370" y="28" width="122" height="54" stroke="#15456C" stroke-width="1.3"/>
-          <rect x="548" y="28" width="118" height="54" stroke="#A8874E" stroke-width="2"/>
-          <path d="M142 55h44M320 55h44M498 55h44" stroke="#2C74AB" stroke-width="1.3"/>
-          <path d="M186 50l6 5-6 5M364 50l6 5-6 5M542 50l6 5-6 5" stroke="#2C74AB" stroke-width="1.3" stroke-linejoin="round"/>
-          <path d="M607 90v22H75V90" stroke="#A8874E" stroke-width="1.6" stroke-dasharray="5 5"/>
-          <path d="M70 96l5-6 5 6" stroke="#A8874E" stroke-width="1.6" stroke-linejoin="round"/>
-        </g>
-        <g font-family="monospace" font-size="10.5" font-weight="700" fill="#0A2540" text-anchor="middle">
-          <text x="75" y="52">PROFILE</text>
-          <text x="253" y="52">APPLY</text>
-          <text x="431" y="52">MEETING</text>
-          <text x="607" y="52" fill="#A8874E">REVIEW</text>
-        </g>
-        <g font-family="sans-serif" font-size="10.5" fill="#4C5A66" text-anchor="middle">
-          <text x="75" y="72">写真・プロフィール</text>
-          <text x="253" y="72">申込み</text>
-          <text x="431" y="72">お見合い</text>
-          <text x="607" y="72" fill="#6E5526">振り返り</text>
-          <text x="340" y="134" font-size="11.5" font-weight="700" fill="#0A2540">結果を振り返り、次に直す1点を決めて戻る</text>
-        </g>
-      </svg>
-      <p>この「振り返って戻る」部分を一人でやるのが、いちばん難しい。</p>
+      <div class="rflow">
+        <div class="rf"><span class="rf-en">PROFILE</span><span class="rf-jp">写真・プロフィール</span></div>
+        <div class="rf-ar"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12 5l7 7-7 7"/></svg></div>
+        <div class="rf"><span class="rf-en">APPLY</span><span class="rf-jp">申込み</span></div>
+        <div class="rf-ar"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12 5l7 7-7 7"/></svg></div>
+        <div class="rf"><span class="rf-en">MEETING</span><span class="rf-jp">お見合い</span></div>
+        <div class="rf-ar"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12 5l7 7-7 7"/></svg></div>
+        <div class="rf mark"><span class="rf-en">REVIEW</span><span class="rf-jp">振り返り</span></div>
+      </div>
+      <div class="rf-loop">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8v5a4 4 0 0 1-4 4H4"/><path d="M8 13l-4 4 4 4"/></svg>
+        <span><span class="nb">結果を振り返り、</span><span class="nb">次に直す1点を決めて、</span><span class="nb">前の段階に戻る</span></span>
+      </div>
+      <p><span class="nb">この「振り返って戻る」部分を</span><span class="nb">一人でやるのが、</span><span class="nb">いちばん難しい。</span></p>
     </div>
 
     <div class="verdict reveal">
@@ -1830,7 +1836,7 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
     </div>
     <div class="ft2">西三河の婚活設計室｜自動車・製造業で働く男性のための結婚相談所</div>
     <div class="fd">本ページは開業準備中のご案内です。記載の料金・サービス内容は開業モニター時点の想定であり、正式サービス開始時に確定します。掲載写真はイメージです。比較表は各手段の一般的な傾向をまとめたもので、個別のサービス内容を保証するものではありません。<br>&copy; MARRIAGE ENGINE</div>
-    <div class="fbuild">BUILD_TAG: 2026-09-13c</div>
+    <div class="fbuild">BUILD_TAG: 2026-09-13d</div>
   </div>
 </footer>
 
