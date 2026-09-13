@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-09-14b -->
+<!-- BUILD_TAG: 2026-09-14c -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>西三河の自動車・製造業で働く30〜40代男性の結婚相談所｜MARRIAGE ENGINE（マリッジエンジン）</title>
@@ -1405,7 +1405,10 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
         詳しい状況は当日伺います。1〜2分で申し込めます。
       </div>
 
-      <form id="form-main" novalidate>
+      <form id="form-main" action="https://formspree.io/f/mqpkvavr" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="【MARRIAGE ENGINE】無料45分 婚活作戦会議のお申し込み">
+        <input type="hidden" name="送信元" value="ページ中ほどのフォーム">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="field-2">
           <div class="field">
             <label for="name-1">お名前<span class="req">必須</span></label>
@@ -1804,7 +1807,10 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
       <h3><span class="nb">無料45分 婚活作戦会議</span><span class="nb">（費用0円・オンライン可）</span></h3>
       <p class="fnote">必須は4項目のみ。詳しい状況は当日伺います。1〜2分で申し込めます。</p>
 
-      <form id="form-final" novalidate>
+      <form id="form-final" action="https://formspree.io/f/mqpkvavr" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="【MARRIAGE ENGINE】無料45分 婚活作戦会議のお申し込み">
+        <input type="hidden" name="送信元" value="ページ下部のフォーム">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="field-2">
           <div class="field">
             <label for="name-2">お名前<span class="req">必須</span></label>
@@ -1897,7 +1903,7 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
       <a href="/tokushoho.html">特定商取引法に基づく表記</a>
     </nav>
     <div class="fd">本ページは開業準備中のご案内です。記載の料金・サービス内容は開業モニター時点の想定であり、正式サービス開始時に確定します。掲載写真はイメージです。比較表は各手段の一般的な傾向をまとめたもので、個別のサービス内容を保証するものではありません。<br>&copy; MARRIAGE ENGINE</div>
-    <div class="fbuild">BUILD_TAG: 2026-09-14b</div>
+    <div class="fbuild">BUILD_TAG: 2026-09-14c</div>
   </div>
 </footer>
 
@@ -2003,8 +2009,8 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
 
     f.addEventListener('submit', function(ev){
       ev.preventDefault();
-      var bad = fields.filter(function(el){ return !validate(el); });
       var al = document.getElementById(alertId);
+      var bad = fields.filter(function(el){ return !validate(el); });
       if(bad.length){
         if(al){
           al.textContent = '未入力の項目が' + bad.length + '件あります。ご確認ください。';
@@ -2018,19 +2024,34 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
 
       var btn = document.getElementById(btnId);
       var txt = btn ? btn.querySelector('.btxt') : null;
-      if(btn){ btn.disabled = true; }
-      if(txt){ txt.textContent = '送信中…'; }
+      var original = txt ? txt.textContent : '';
+      if(btn) btn.disabled = true;
+      if(txt) txt.textContent = '送信中…';
 
-      window.setTimeout(function(){
+      fetch(f.action, {
+        method: 'POST',
+        body: new FormData(f),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if(!res.ok) throw new Error('status ' + res.status);
         f.style.display = 'none';
         var t = document.getElementById(thanksId);
         if(t){
           t.classList.add('on');
           t.scrollIntoView({ block:'center', behavior:'smooth' });
         }
-      }, 500);
+      }).catch(function(){
+        if(btn) btn.disabled = false;
+        if(txt) txt.textContent = original;
+        if(al){
+          al.textContent = '送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。繰り返し失敗する場合は、お手数ですが時間をおいて再度お試しください。';
+          al.classList.add('on');
+          al.scrollIntoView({ block:'center', behavior:'smooth' });
+        }
+      });
     });
   }
+
   bind('form-main', 'thanks-main', 'alert-main', 'submit-main');
   bind('form-final', 'thanks-final', 'alert-final', 'submit-final');
 
