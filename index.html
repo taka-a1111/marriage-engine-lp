@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<!-- BUILD_TAG: 2026-09-13g -->
+<!-- BUILD_TAG: 2026-09-14a -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>西三河の自動車・製造業で働く30〜40代男性の結婚相談所｜MARRIAGE ENGINE（マリッジエンジン）</title>
@@ -515,6 +515,23 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
 /* ===== PC用サイドナビ ===== */
 .sidenav{display:none}
 
+/* ===== 準備中のお知らせ ===== */
+.notice-bar{background:var(--gold-pale);border-bottom:1px solid #E4D8BE}
+.notice-in{display:flex;gap:13px;align-items:flex-start;padding:18px 0}
+.notice-in svg{width:20px;height:20px;flex:0 0 auto;margin-top:4px;stroke:var(--gold);fill:none}
+.notice-in b{display:block;font-family:var(--mn);font-size:1rem;color:var(--navy);line-height:1.6}
+.notice-in p{margin-top:7px;font-size:.88rem;color:#6E5526;line-height:1.85}
+.check{margin-top:22px}
+.check label{display:flex;gap:12px;align-items:flex-start;background:var(--gold-pale);
+ border:1px solid #E4D8BE;padding:15px 16px;cursor:pointer;font-weight:700;font-size:.92rem;line-height:1.7}
+.check input{appearance:none;width:22px;height:22px;flex:0 0 auto;margin-top:2px;border:1.5px solid #C6A96F;
+ background:#fff;border-radius:3px;position:relative;cursor:pointer}
+.check input:checked{background:var(--gold);border-color:var(--gold)}
+.check input:checked::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;
+ border-right:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(45deg)}
+.check input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.check .sub{display:block;font-weight:400;font-size:.82rem;color:#6E5526;margin-top:5px;line-height:1.75}
+
 /* ===== フォームのエラー表示 ===== */
 .err{display:none;margin-top:8px;font-size:.84rem;font-weight:700;color:#A82F0C;line-height:1.7}
 .err.on{display:block}
@@ -906,6 +923,17 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
   </div>
 </section>
 
+<!-- 準備中のお知らせ -->
+<div class="notice-bar">
+  <div class="wrap notice-in">
+    <svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+    <div>
+      <b>現在、正式サービスの開始準備中です。</b>
+      <p>入会のお申し込み受付は、準備が整い次第開始します。無料45分 婚活作戦会議は現在もお受けしていますので、開始時期のご連絡をご希望の方はお申し込みフォームでお知らせください。</p>
+    </div>
+  </div>
+</div>
+
 <!-- 数値バンド -->
 <section class="figures">
   <div class="wrap">
@@ -1093,7 +1121,7 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
         <div class="cmp-row"><span class="k">マッチングアプリ</span><span class="v">多い</span></div>
         <div class="cmp-row"><span class="k">婚活パーティー</span><span class="v">その場の参加者のみ</span></div>
         <div class="cmp-row"><span class="k">大手の結婚相談所</span><span class="v">多い</span></div>
-        <div class="cmp-row me"><span class="k">MARRIAGE<br>ENGINE</span><span class="v">立ち上げ期のため、これから拡大していく段階</span></div>
+        <div class="cmp-row me"><span class="k">MARRIAGE<br>ENGINE</span><span class="v">正式サービスの開始準備中。体制が整い次第ご案内します</span></div>
       </div>
       <div class="cmp-card reveal">
         <div class="ch"><span class="cn">02</span><span class="nb">担当者のサポート</span></div>
@@ -1423,6 +1451,14 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
           <textarea id="issue-1" name="issue" placeholder="例：アプリでやりとりが続かない、写真をどう撮ればいいか分からない"></textarea>
         </div>
 
+        <div class="check">
+          <label for="notify-1">
+            <input type="checkbox" id="notify-1" name="notify" value="希望する">
+            <span>入会受付の開始時に連絡してほしい
+              <span class="sub">開業モニター10名の枠は、ご連絡を希望された方から優先してご案内します。</span>
+            </span>
+          </label>
+        </div>
         <div class="form-alert" id="alert-main" role="alert"></div>
         <div class="form-submit">
           <button class="btn" type="submit" id="submit-main">
@@ -1578,7 +1614,7 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
       <div class="en">Price<span class="no">11</span></div>
       <h2><span class="nb">料金</span><span class="nb">（開業モニター料金）</span></h2>
     </div>
-    <div class="pnote reveal">正式サービス開始前のため、現在は開業モニター料金です。金額・サービス内容は正式開始時に確定します。表示はすべて税込です。</div>
+    <div class="pnote reveal">下記は開業モニター料金の予定額です。現在、入会のお申し込みは受け付けていません。金額・サービス内容は正式サービス開始時に確定し、ご入会の際は書面でご確認いただいたうえで開始します。表示はすべて税込です。</div>
 
     <div class="price-grid" style="margin-top:24px">
       <div class="ptable reveal">
@@ -1650,9 +1686,9 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
       </div>
       <div class="fitem reveal">
         <div class="fn">5</div>
-        <div class="ft">入会・活動開始</div>
-        <p class="fd">ご希望の場合のみ、料金とサポート内容を書面で確認したうえで入会手続きへ。プロフィール作成から活動を始めます。</p>
-        <span class="fw">まず土台づくりから</span>
+        <div class="ft">入会受付の開始をお待ちいただきます</div>
+        <p class="fd">入会のお申し込み受付は準備中です。開始時にご連絡しますので、ご希望の方はフォームでお知らせください。開始後は、料金とサポート内容を書面で確認したうえで手続きへ進みます。</p>
+        <span class="fw">受付開始までお待ちください</span>
       </div>
     </div>
   </div>
@@ -1700,6 +1736,10 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
     </div>
 
     <div class="faq-list reveal">
+      <details>
+        <summary>今すぐ入会できますか？</summary>
+        <div class="faq-a">現在は正式サービスの開始準備中のため、入会のお申し込みは受け付けていません。無料45分 婚活作戦会議はお受けしていますので、まずは現状の整理からご利用ください。受付の開始時にご連絡をご希望の方は、お申し込みフォームのチェック欄にご記入ください。開始時期が決まり次第、優先してご案内します。</div>
+      </details>
       <details>
         <summary>店舗に行く必要はありますか？</summary>
         <div class="faq-a">店舗は持たず、オンライン相談を中心としています。無料相談も定期面談もオンラインで完結します。対面をご希望の場合は、西三河・名古屋周辺で場所を調整します。</div>
@@ -1791,6 +1831,14 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
           <input type="text" id="pref-2" name="preferred" placeholder="例：平日20時以降／土曜午前" required aria-describedby="err-pref-2">
           <p class="err" id="err-pref-2" role="alert">相談の希望日時をご記入ください。</p>
         </div>
+        <div class="check">
+          <label for="notify-2">
+            <input type="checkbox" id="notify-2" name="notify" value="希望する">
+            <span>入会受付の開始時に連絡してほしい
+              <span class="sub">開業モニター10名の枠は、ご連絡を希望された方から優先してご案内します。</span>
+            </span>
+          </label>
+        </div>
         <div class="form-alert" id="alert-final" role="alert"></div>
         <div class="form-submit">
           <button class="btn" type="submit" id="submit-final">
@@ -1845,7 +1893,7 @@ footer .fbuild{margin-top:11px;font-family:var(--mono);font-size:.66rem;color:#5
       <a href="/tokushoho.html">特定商取引法に基づく表記</a>
     </nav>
     <div class="fd">本ページは開業準備中のご案内です。記載の料金・サービス内容は開業モニター時点の想定であり、正式サービス開始時に確定します。掲載写真はイメージです。比較表は各手段の一般的な傾向をまとめたもので、個別のサービス内容を保証するものではありません。<br>&copy; MARRIAGE ENGINE</div>
-    <div class="fbuild">BUILD_TAG: 2026-09-13g</div>
+    <div class="fbuild">BUILD_TAG: 2026-09-14a</div>
   </div>
 </footer>
 
